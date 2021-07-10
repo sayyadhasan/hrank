@@ -12,7 +12,7 @@ public class AppTest
     /**
      * Rigorous Test :-)Loops1
      * Loops2
-     * Solution.java
+     * SockPair.java
      */
     @Test
     public void shouldAnswerWithTrue()
