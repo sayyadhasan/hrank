@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class SockResult {
 
     /*
      * Complete the 'sockMerchant' function below.
@@ -41,7 +41,7 @@ public class SockPair {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        int result = Result.sockMerchant(n, ar);
+        int result = SockResult.sockMerchant(n, ar);
 
         System.out.println(result);
 
