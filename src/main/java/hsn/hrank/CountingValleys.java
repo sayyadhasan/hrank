@@ -4,7 +4,7 @@ import java.io.*;
 
 import static java.util.stream.Collectors.joining;
 
-class Result {
+class CVResult {
 
     /*
      * Complete the 'countingValleys' function below.
@@ -21,22 +21,14 @@ class Result {
         int valleys = 0;
         int seaLevel = 0;
 
-        boolean valleyStarts = false;
-
         for (int i = 0; i < steps; i++) {
-            if (path.charAt(i) == 'D') {
-                seaLevel += -1;
+            if (path.charAt(i) == 'U') {
+                seaLevel++;
+                if (seaLevel == 0) {
+                    valleys++;
+                }
             } else {
-                seaLevel += 1;
-            }
-
-            if (seaLevel < 0) {
-                valleyStarts = true;
-            }
-
-            if (valleyStarts && i > 0 && seaLevel == 0) {
-                valleyStarts = false;
-                valleys++;
+                seaLevel--;
             }
         }
         return valleys;
@@ -44,7 +36,7 @@ class Result {
 
 }
 
-public class Solution {
+public class CountingValleys {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -53,7 +45,7 @@ public class Solution {
 
         String path = bufferedReader.readLine();
 
-        int result = Result.countingValleys(steps, path);
+        int result = CVResult.countingValleys(steps, path);
 
         //bufferedWriter.write(String.valueOf(result));
         //bufferedWriter.newLine();
